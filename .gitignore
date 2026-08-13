@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# 에디터
+.vscode/
+.idea/
+.obsidian/
+
+# Claude Code — 기본은 무시하되, 클럽 공용 '제출' 스킬만 추적
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/제출/
+
+# oh-my-claudecode 로컬 상태 (로컬 전용)
+.omc/
+
+# API 키·시크릿
+.env
+node_modules/
+
+# Vercel CLI 로컬 링크 정보(프로젝트 ID 등) — 로컬 전용
+.vercel/
