@@ -14,8 +14,8 @@
 - VS Code: Source Control 패널 → `···` 메뉴 → **Pull**
 
 **② 내 파일 작성**
-- `1_mission/{내 조}/{내 이름}/` 안에서 `자기소개.md` 나 해당 주차 `submission.md` 작성
-- Claude Code에 시키기: `"1주차 submission 작성해줘"`
+- `1_mission/{내 조}/{내 이름}/` 안에서 `자기소개.md` 나 해당 회차 `submission.md` 작성
+- Claude Code에 시키기: `"1회차 submission 작성해줘"`
 
 **③ 올리기 (commit + push)**
 - Claude Code에 시키기: `"방금 작성한 거 커밋하고 푸시해줘"`
