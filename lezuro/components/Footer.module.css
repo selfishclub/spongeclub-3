@@ -1,0 +1,41 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding-block: 48px 56px;
+  background: #0b0b0b;
+}
+
+.top {
+  margin-bottom: 24px;
+}
+
+.info {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.name {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.info a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.info a:hover {
+  color: var(--gold);
+}
+
+.copy {
+  margin: 28px 0 0;
+  font-size: 15px;
+  color: #6a6a6a;
+}

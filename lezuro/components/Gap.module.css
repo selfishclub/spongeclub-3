@@ -1,0 +1,133 @@
+.chart {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: right;
+}
+
+/*
+  막대와 라벨을 그리드로 나눕니다.
+  flex + width:100% 막대 옆에 nowrap 라벨을 두면 트랙을 밀어내
+  페이지에 가로 스크롤이 생깁니다. 라벨 자리를 먼저 잡아두어야 합니다.
+*/
+.track {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.bar {
+  display: block;
+  height: 34px;
+  border-radius: 8px;
+  background: #3a3a3a;
+  width: var(--w);
+  /* 화면에 들어올 때 왼쪽에서 자라납니다. */
+  transform-origin: left center;
+  animation: grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.highlight {
+  background: var(--gold);
+  box-shadow: 0 0 28px -4px rgba(245, 197, 24, 0.5);
+}
+
+.faded {
+  opacity: 0.45;
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.valueGold {
+  color: var(--gold);
+}
+
+.footnote {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 14px;
+  padding: 20px 22px;
+  color: var(--muted);
+  font-size: 17px;
+}
+
+.asof {
+  margin: 12px 0 0;
+  text-align: right;
+  font-size: 15px;
+  color: #7a7a7a;
+}
+
+@media (min-width: 768px) {
+  .row {
+    grid-template-columns: 110px 1fr;
+    gap: 16px;
+  }
+  .name,
+  .value {
+    font-size: 18px;
+  }
+  .bar {
+    height: 44px;
+  }
+  .footnote {
+    font-size: 18px;
+  }
+}
+
+/* 아주 좁은 화면에서는 막대 옆 라벨이 넘칠 수 있어 아래로 내립니다. */
+@media (max-width: 420px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .name {
+    text-align: left;
+  }
+  .track {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: start;
+    gap: 6px;
+  }
+  .bar {
+    height: 26px;
+  }
+  .value {
+    white-space: normal;
+  }
+}

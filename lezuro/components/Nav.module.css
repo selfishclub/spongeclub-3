@@ -1,0 +1,70 @@
+.wrap {
+  position: fixed;
+  top: 14px;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  /* 모바일에서 좌우 16px 여백 확보 */
+  padding-inline: 16px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.pill {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 1120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  background: rgba(15, 15, 15, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 12px 10px 20px;
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  text-decoration: none;
+  display: inline-flex;
+  flex: none;
+}
+
+.cta {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  background: var(--gold);
+  color: #191400;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  padding: 13px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease;
+}
+
+.cta:hover {
+  background: #ffd63d;
+}
+
+@media (min-width: 768px) {
+  .wrap {
+    top: 20px;
+    padding-inline: 24px;
+  }
+  .pill {
+    padding: 12px 14px 12px 26px;
+  }
+  .cta {
+    font-size: 17px;
+    padding: 14px 24px;
+  }
+}

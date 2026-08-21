@@ -1,0 +1,188 @@
+.form {
+  display: grid;
+  gap: 22px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-block);
+  padding: 28px 22px;
+  box-shadow: var(--shadow);
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.required {
+  color: var(--gold);
+}
+
+.optional {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  font-family: inherit;
+  /* 18px 미만이면 iOS 에서 입력 시 화면이 확대됩니다. */
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--text);
+  background: #121212;
+  border: 1px solid var(--border-strong);
+  border-radius: 14px;
+  padding: 16px 16px;
+  transition: border-color 0.15s ease;
+  min-height: 56px;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #6a6a6a;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--gold);
+}
+
+.input[aria-invalid='true'],
+.textarea[aria-invalid='true'] {
+  border-color: #e05a5a;
+}
+
+.error {
+  margin: 0;
+  color: #ff8a8a;
+  font-size: 16px;
+}
+
+.formError {
+  margin: 0;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(224, 90, 90, 0.1);
+  border: 1px solid rgba(224, 90, 90, 0.35);
+  color: #ffb3b3;
+  font-size: 17px;
+}
+
+/* ── 개인정보 동의 ─────────────────────────── */
+
+.agreeBox {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+}
+
+.agree {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.checkbox {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 2px 0 0;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.agree strong {
+  color: var(--gold);
+}
+
+.agreeNote {
+  margin: 0;
+  font-size: 15px;
+  color: #8a8a8a;
+  line-height: 1.6;
+}
+
+.submit {
+  width: 100%;
+  font-size: 19px;
+  padding-block: 20px;
+  min-height: 62px;
+}
+
+/* ── 접수 완료 ─────────────────────────────── */
+
+.done {
+  background: var(--card);
+  border: 1px solid rgba(245, 197, 24, 0.35);
+  border-radius: var(--radius-block);
+  padding: 48px 26px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.done:focus {
+  outline: none;
+}
+
+.doneIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #191400;
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 22px;
+}
+
+.doneTitle {
+  margin: 0 0 14px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.doneBody {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.doneBody a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (min-width: 768px) {
+  .form {
+    padding: 36px 34px;
+  }
+  .doneTitle {
+    font-size: 28px;
+  }
+  .done {
+    padding: 60px 32px;
+  }
+}

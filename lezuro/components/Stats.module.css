@@ -1,0 +1,79 @@
+.section {
+  padding-block: 12px 60px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 24px 96px;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+.item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-block);
+  box-shadow: var(--shadow);
+  padding: 32px 26px;
+  text-align: center;
+}
+
+.value {
+  /* 카드 폭이 좁아지면 숫자도 같이 줄어듭니다. 데스크톱에서는 80px 로 고정됩니다. */
+  font-size: clamp(40px, 5.6vw, 80px);
+  line-height: 1.05;
+  font-weight: 800;
+  color: var(--gold);
+  letter-spacing: -0.03em;
+  /* 카운트업 중 숫자 폭이 흔들리지 않게 */
+  font-variant-numeric: tabular-nums;
+  /*
+    body 의 overflow-wrap: anywhere 가 "20,000+" 를 "20,00 / 0+" 로 끊습니다.
+    숫자는 한 덩어리로 유지합니다.
+  */
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  margin-bottom: 14px;
+}
+
+.label {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.note {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 20px;
+  }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

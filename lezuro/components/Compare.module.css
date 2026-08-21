@@ -1,0 +1,74 @@
+.scroller {
+  /* 표만 가로 스크롤 — 페이지에는 가로 스크롤이 생기지 않습니다. */
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-block);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 17px;
+}
+
+.table th,
+.table td {
+  padding: 18px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+
+.table tbody tr:last-child th,
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table thead th {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.03);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+}
+
+.table tbody th {
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--text);
+  width: 1%;
+}
+
+.other {
+  color: #8c8c8c;
+}
+
+/* 레저로 열 강조 */
+.us {
+  color: var(--gold);
+  font-weight: 700;
+  background: rgba(245, 197, 24, 0.06);
+}
+
+.table thead th.us {
+  color: var(--gold);
+  background: rgba(245, 197, 24, 0.12);
+}
+
+@media (min-width: 768px) {
+  .table {
+    font-size: 18px;
+  }
+  .table th,
+  .table td {
+    padding: 20px 22px;
+  }
+}

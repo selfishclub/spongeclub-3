@@ -1,0 +1,54 @@
+.section {
+  position: relative;
+  /* 아래 광원이 화면 밖으로 나가 가로 스크롤을 만들지 않게 가둡니다. */
+  overflow: hidden;
+  scroll-margin-top: 88px;
+}
+
+/* 폼 뒤로 은은한 골드 광원 */
+.section::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  width: 460px;
+  height: 460px;
+  transform: translateX(-50%);
+  background: var(--gold);
+  filter: blur(80px);
+  opacity: 0.1;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.closed {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-block);
+  padding: 48px 26px;
+  text-align: center;
+}
+
+.closedMsg {
+  margin: 0 0 10px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.closedSub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.closedSub a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

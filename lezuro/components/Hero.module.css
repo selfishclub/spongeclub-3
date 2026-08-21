@@ -1,0 +1,118 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: 132px 72px;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding-block: 200px 120px;
+  }
+}
+
+.blobs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.blobA,
+.blobB {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: var(--gold);
+  filter: blur(80px);
+  opacity: 0.15;
+}
+
+.blobA {
+  width: 340px;
+  height: 340px;
+  top: -60px;
+  left: -80px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.blobB {
+  width: 420px;
+  height: 420px;
+  bottom: -140px;
+  right: -120px;
+  animation: float 6s ease-in-out infinite;
+  /* 두 덩이가 같은 위상으로 움직이지 않게 어긋냅니다. */
+  animation-delay: -3s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  margin-bottom: 26px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.headline {
+  margin: 0 0 22px;
+  font-size: 34px;
+  line-height: 1.28;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.line {
+  display: block;
+}
+
+.sub {
+  margin: 0 0 38px;
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 40ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* 아주 좁은 화면에서는 버튼을 꽉 채웁니다. */
+@media (max-width: 400px) {
+  .actions :global(.btn) {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .headline {
+    font-size: 60px;
+    line-height: 1.18;
+  }
+  .sub {
+    font-size: 20px;
+    max-width: 48ch;
+  }
+  .eyebrow {
+    font-size: 19px;
+  }
+}

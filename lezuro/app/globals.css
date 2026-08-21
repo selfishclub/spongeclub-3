@@ -1,0 +1,253 @@
+/* ─────────────────────────────────────────────
+   LEZURO 창업상담 랜딩 — 디자인 토큰
+   ───────────────────────────────────────────── */
+
+:root {
+  --bg: #0f0f0f;
+  --card: #1a1a1a;
+  --gold: #f5c518;
+  --text: #ffffff;
+  --muted: #b0b0b0;
+
+  /* 로고 위 3색 바에만 사용 */
+  --brand-blue: #1b4a9c;
+  --brand-yellow: #f5c518;
+  --brand-red: #d32f2f;
+
+  --radius-card: 24px;
+  --radius-block: 32px;
+  --shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.4);
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  --maxw: 1120px;
+  --gutter: 20px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* 상단 고정 바에 섹션 제목이 가리지 않도록 */
+  scroll-padding-top: 96px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Pretendard, Pretendard Variable, -apple-system, BlinkMacSystemFont,
+    'Apple SD Gothic Neo', 'Segoe UI', 'Malgun Gothic', system-ui, sans-serif;
+  /* 주 고객층이 50~60대라 본문을 18px 아래로 내리지 않습니다. */
+  font-size: 18px;
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  /* 페이지 자체에는 가로 스크롤이 생기지 않게 합니다. */
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+/* ── 레이아웃 ─────────────────────────────── */
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+section {
+  padding-block: 72px;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding-block: 112px;
+  }
+}
+
+/* ── 섹션 제목 ────────────────────────────── */
+
+.section-title {
+  font-size: 28px;
+  line-height: 1.35;
+  font-weight: 800;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 제목 옆 골드 바 */
+.section-title::before {
+  content: '';
+  flex: none;
+  width: 5px;
+  height: 1.1em;
+  border-radius: 3px;
+  background: var(--gold);
+}
+
+.section-sub {
+  color: var(--muted);
+  margin: 0 0 36px;
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 40px;
+  }
+  .section-sub {
+    font-size: 19px;
+  }
+}
+
+/* ── 카드 ─────────────────────────────────── */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+/* ── 버튼 ─────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 18px 28px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s ease, background-color 0.15s ease,
+    border-color 0.15s ease;
+  /* 터치 목표 최소 크기 확보 */
+  min-height: 56px;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #191400;
+}
+
+.btn-primary:hover {
+  background: #ffd63d;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 키보드 포커스는 항상 보이게 (어두운 배경이라 기본 링이 잘 안 보입니다) */
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── 그레인 오버레이 ──────────────────────── */
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+}
+
+/* ── 스크롤 등장 ──────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── 움직임을 원하지 않는 사용자 ──────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 스크립트가 실행되지 않아도 내용이 보이도록 */
+.no-js .reveal {
+  opacity: 1;
+  transform: none;
+}

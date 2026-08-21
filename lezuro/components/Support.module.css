@@ -1,0 +1,57 @@
+.grid {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+.card {
+  height: 100%;
+}
+
+.press {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  padding: 26px 24px;
+}
+
+.pressLabel {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.pressList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.pressList li {
+  color: var(--muted);
+  font-size: 17px;
+  padding-left: 16px;
+  border-left: 2px solid var(--border-strong);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .pressList li {
+    font-size: 18px;
+  }
+}

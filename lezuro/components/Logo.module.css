@@ -1,0 +1,65 @@
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  line-height: 1;
+}
+
+.bars {
+  display: flex;
+  gap: 3px;
+}
+
+.bars i {
+  display: block;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.blue {
+  width: 14px;
+  background: var(--brand-blue);
+}
+.yellow {
+  width: 14px;
+  background: var(--brand-yellow);
+}
+.red {
+  width: 14px;
+  background: var(--brand-red);
+}
+
+.word {
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.sm .word {
+  font-size: 18px;
+}
+.md .word {
+  font-size: 22px;
+}
+.lg .word {
+  font-size: 26px;
+}
+
+.sm .bars i {
+  width: 11px;
+  height: 2.5px;
+}
+.lg .bars i {
+  width: 17px;
+  height: 3.5px;
+}
+
+@media (min-width: 768px) {
+  .lg .word {
+    font-size: 32px;
+  }
+  .lg .bars i {
+    width: 21px;
+    height: 4px;
+  }
+}
